@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>تصاميم موقع مدد</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@800&family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@700&display=swap">
+<style>
+/* Layout: one start-aligned intro, then a 2×2 grid of concept cards; each card is a single link with a miniature of the page it opens. */
+:root {
+  --bg: #F3F7F7;
+  --surface: #FFFFFF;
+  --ink: #0B2A33;
+  --muted: #46626A;
+  --line: #D3DFE2;
+  --brand: #055064;
+  --brand-ink: #FFFFFF;
+  --chip: #E4EEF0;
+  --focus: #0E7C99;
+  --font-ui: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #04212A; --surface: #0A313C; --ink: #EAF3F5; --muted: #A9C6CD; --line: #1F4A56;
+    --brand: #7FD6E3; --brand-ink: #04212A; --chip: #123E4A; --focus: #9FE3EE; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #04212A; --surface: #0A313C; --ink: #EAF3F5; --muted: #A9C6CD; --line: #1F4A56;
+  --brand: #7FD6E3; --brand-ink: #04212A; --chip: #123E4A; --focus: #9FE3EE; color-scheme: dark;
+}
+body { background: var(--bg); color: var(--ink); font-family: var(--font-ui); font-size: 16px; line-height: 1.75; }
+.en { display: none; }
+[data-lang="en"] .ar { display: none; }
+[data-lang="en"] .en { display: inline; }
+[dir="ltr"] .flip { transform: scaleX(-1); }
+a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+
+.wrap { max-width: 1180px; margin-inline: auto; padding-inline: clamp(16px, 4vw, 40px); padding-block: 20px 56px; display: flex; flex-direction: column; gap: clamp(28px, 4vw, 48px); }
+.top { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brand { display: flex; align-items: center; gap: 12px; font-size: 20px; font-weight: 700; color: var(--ink); }
+.brand img { width: 56px; height: 56px; display: block; }
+.brand .bar { font-weight: 400; color: var(--muted); }
+.lang { min-height: 44px; padding: 0 18px; border-radius: 999px; border: 1px solid var(--line); background: var(--surface); color: var(--ink); font: inherit; font-size: 14.5px; font-weight: 600; cursor: pointer; }
+.intro { display: flex; flex-direction: column; gap: 12px; max-width: 760px; }
+.intro h1 { margin: 0; font-size: clamp(30px, 4.6vw, 52px); line-height: 1.3; font-weight: 700; text-wrap: balance; }
+.intro p { margin: 0; font-size: clamp(16px, 1.6vw, 18.5px); color: var(--muted); }
+
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(420px, 100%), 1fr)); gap: clamp(16px, 2.4vw, 28px); }
+.card { display: flex; flex-direction: column; min-width: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 20px; overflow: hidden; color: var(--ink); text-decoration: none; transition: transform .18s ease, box-shadow .18s ease; }
+.card:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(3, 40, 51, .16); }
+@media (prefers-reduced-motion: reduce) { .card { transition: none; } .card:hover { transform: none; } }
+.card-body { display: flex; flex-direction: column; gap: 10px; padding: clamp(18px, 2.4vw, 26px); }
+.card-head { display: flex; align-items: center; gap: 14px; }
+.num { flex-shrink: 0; width: 40px; height: 40px; border-radius: 50%; background: var(--chip); color: var(--brand); display: flex; align-items: center; justify-content: center; font-size: 17px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.names { display: flex; flex-direction: column; min-width: 0; }
+.names strong { font-size: 22px; line-height: 1.35; font-weight: 700; }
+.names small { font-size: 13.5px; color: var(--muted); }
+.card p { margin: 0; font-size: 15.5px; color: var(--muted); }
+.open { display: flex; align-items: center; gap: 8px; min-height: 44px; font-size: 15.5px; font-weight: 700; color: var(--brand); }
+.note { margin: 0; font-size: 14.5px; color: var(--muted); max-width: 760px; }
+
+/* Miniatures: fixed looks of the four designs, sized in container units so they scale with the card. */
+.pv { container-type: inline-size; position: relative; aspect-ratio: 16 / 10; max-width: 100%; overflow: hidden; border-bottom: 1px solid var(--line); }
+.pv img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; }
+.pv-h { font-weight: 700; line-height: 1.3; text-wrap: balance; }
+
+.pv-athar { background: #033847; }
+.pv-athar img { object-position: 50% 30%; }
+[dir="rtl"] .pv-athar .pv-shade { position: absolute; inset: 0; background: linear-gradient(to left, rgba(3,40,51,.95) 0%, rgba(3,40,51,.8) 42%, rgba(3,40,51,.1) 80%); }
+[dir="ltr"] .pv-athar .pv-shade { position: absolute; inset: 0; background: linear-gradient(to right, rgba(3,40,51,.95) 0%, rgba(3,40,51,.8) 42%, rgba(3,40,51,.1) 80%); }
+.pv-athar .pv-text { position: absolute; inset-inline-start: 6cqw; top: 9cqw; width: 50cqw; display: flex; flex-direction: column; align-items: flex-start; gap: 3cqw; color: #FFFFFF; }
+.pv-athar .pv-h { font-family: 'IBM Plex Sans Arabic', sans-serif; font-size: 6.2cqw; }
+.pv-athar .pv-btn { padding: 1.2cqw 4cqw; border-radius: 1.4cqw; background: #F5B544; color: #06232B; font-size: 2.8cqw; font-weight: 700; }
+.pv-athar .pv-bar { position: absolute; inset-inline: 6cqw; bottom: 0; height: 11cqw; border-radius: 2.4cqw 2.4cqw 0 0; background: #FFFFFF; display: flex; align-items: center; gap: 1.6cqw; padding-inline: 3cqw; }
+.pv-athar .pv-bar i { width: 9cqw; height: 5.4cqw; border-radius: 1.2cqw; border: .3cqw solid #C9D6DA; }
+.pv-athar .pv-bar i.on { background: #055064; border-color: #055064; }
+.pv-athar .pv-bar b { margin-inline-start: auto; width: 22cqw; height: 5.4cqw; border-radius: 1.2cqw; background: #055064; }
+
+.pv-journal { background: #F3F5F4; color: #10262D; }
+.pv-journal .pv-mast { position: absolute; inset-inline: 6cqw; top: 3.4cqw; padding-bottom: 1.6cqw; border-bottom: .9cqw double #10262D; text-align: center; font-family: 'Amiri', serif; font-size: 4.2cqw; line-height: 1.2; font-weight: 700; color: #055064; }
+.pv-journal .pv-text { position: absolute; inset-inline-start: 6cqw; top: 17cqw; width: 47cqw; display: flex; flex-direction: column; gap: 1cqw; }
+.pv-journal .pv-kick { font-size: 2.1cqw; font-weight: 700; color: #B83A24; }
+.pv-journal .pv-h { font-family: 'Amiri', serif; font-size: 7.4cqw; line-height: 1.32; }
+.pv-journal .pv-photo { position: absolute; inset-inline-end: 6cqw; top: 15cqw; width: 34cqw; height: 44cqw; }
+.pv-journal .pv-photo img { object-position: 50% 28%; }
+
+.pv-pulse { background: #02222B; }
+.pv-pulse img { object-position: 50% 28%; }
+.pv-pulse .pv-shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(2,34,43,.84), rgba(2,34,43,.78) 55%, #02222B); }
+.pv-pulse .pv-text { position: absolute; inset-inline-start: 6cqw; top: 13cqw; width: 48cqw; color: #FFFFFF; }
+.pv-pulse .pv-h { font-family: 'Alexandria', sans-serif; font-weight: 800; font-size: 6cqw; line-height: 1.25; }
+.pv-pulse .pv-h em { font-style: normal; color: #7FD6E3; }
+.pv-pulse .pv-panel { position: absolute; inset-inline-end: 6cqw; top: 10cqw; width: 30cqw; padding: 3cqw; border-radius: 3cqw; background: #06313D; border: .25cqw solid rgba(255,255,255,.16); display: grid; grid-template-columns: 1fr 1fr; gap: 1.4cqw; }
+.pv-pulse .pv-panel i { height: 7cqw; border-radius: 1.6cqw; border: .3cqw solid rgba(255,255,255,.3); }
+.pv-pulse .pv-panel i.on { background: #7FD6E3; border-color: #7FD6E3; }
+.pv-pulse .pv-panel b { grid-column: 1 / -1; height: 7cqw; border-radius: 1.6cqw; background: #FFB23E; }
+
+.pv-mosaic { background: #EAF1F2; display: grid; grid-template-columns: 1.5fr 1fr .8fr; grid-template-rows: 1.7fr 1fr; gap: 2cqw; padding: 3cqw; box-sizing: border-box; }
+.pv-mosaic > div { position: relative; border-radius: 3.4cqw; overflow: hidden; min-width: 0; }
+.pv-mosaic .t-teal { background: #055064; color: #FFFFFF; padding: 4cqw; display: flex; align-items: flex-end; }
+.pv-mosaic .pv-h { font-family: 'Readex Pro', sans-serif; font-size: 5cqw; }
+.pv-mosaic .t-photo { grid-column: 2 / 4; }
+.pv-mosaic .t-photo img { object-position: 50% 42%; }
+.pv-mosaic .t-white { background: #FFFFFF; display: flex; align-items: center; gap: 1.4cqw; padding-inline: 3cqw; }
+.pv-mosaic .t-white i { flex: 1; height: 6cqw; border-radius: 1.6cqw; background: #EAF1F2; }
+.pv-mosaic .t-white i.on { background: #055064; }
+.pv-mosaic .t-sky { background: #CBE4E9; }
+.pv-mosaic .t-photo2 img { object-position: 14% 30%; }
+</style>
+<style>body{margin:0}img{max-width:100%}</style>
+</head>
+<body>
+
+<div id="madad-root" dir="rtl" lang="ar" data-lang="ar">
+<div class="wrap">
+
+<header class="top">
+<div class="brand"><img src="images/madad-logo.png" alt=""><span>مدد <span class="bar">|</span> madad</span></div>
+<button type="button" class="lang" id="lang-toggle"><span class="ar">English</span><span class="en">العربية</span></button>
+</header>
+
+<section class="intro">
+<h1><span class="ar">أربعة تصاميم لموقع مدد</span><span class="en">Four designs for the Madad website</span></h1>
+<p><span class="ar">اختر تصميمًا لفتح صفحته كاملة. كل صفحة تعمل بالعربية والإنجليزية وتتجاوب مع الجوال، ويمكنك التنقل بين التصاميم من الشريط أسفل كل صفحة.</span><span class="en">Pick a design to open its full page. Every page works in Arabic and English and adapts to phones, and the bar at the bottom of each page moves between the designs.</span></p>
+</section>
+
+<main class="grid">
+
+<a class="card" href="athar.html">
+<div class="pv pv-athar" aria-hidden="true">
+<img src="images/hero.jpg" alt="">
+<div class="pv-shade"></div>
+<div class="pv-text"><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، ونصنع الأثر.</span><span class="en">From Gaza… we extend goodness and create impact.</span></div><div class="pv-btn"><span class="ar">تبرع الان</span><span class="en">Donate Now</span></div></div>
+<div class="pv-bar"><i></i><i></i><i class="on"></i><i></i><b></b></div>
+</div>
+<div class="card-body">
+<div class="card-head"><div class="num">1</div><div class="names"><strong><span class="ar">الأثر</span><span class="en">Athar</span></strong><small><span class="ar">Athar · كلاسيكي موثوق</span><span class="en">الأثر · Classic trust</span></small></div></div>
+<p><span class="ar">مؤسسي وواضح: أبيض وتركوازي، زر تبرع زعفراني، وشريط تبرع سريع تحت الواجهة.</span><span class="en">Institutional and clear: white and teal, a saffron donate button and a quick-donate bar under the hero.</span></p>
+<div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+<a class="card" href="journal.html">
+<div class="pv pv-journal" aria-hidden="true">
+<div class="pv-mast">مدد | madad</div>
+<div class="pv-text"><div class="pv-kick"><span class="ar">من الميدان · قطاع غزة</span><span class="en">FROM THE FIELD · GAZA STRIP</span></div><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، ونصنع الأثر.</span><span class="en">From Gaza… we extend goodness and create impact.</span></div></div>
+<div class="pv-photo"><img src="images/tent-pole.jpg" alt=""></div>
+</div>
+<div class="card-body">
+<div class="card-head"><div class="num">2</div><div class="names"><strong><span class="ar">الميدان</span><span class="en">Field Journal</span></strong><small><span class="ar">Field Journal · تحريري قصصي</span><span class="en">الميدان · Editorial storytelling</span></small></div></div>
+<p><span class="ar">يروي العمل كقصة: عناوين بخط أميري، ثلاثة فصول مرقّمة، ومقال مصوّر من الميدان.</span><span class="en">Tells the work as a story: Amiri headlines, three numbered chapters and a captioned photo essay.</span></p>
+<div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+<a class="card" href="pulse.html">
+<div class="pv pv-pulse" aria-hidden="true">
+<img src="images/hero.jpg" alt="">
+<div class="pv-shade"></div>
+<div class="pv-text"><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، <em>ونصنع الأثر.</em></span><span class="en">From Gaza… we extend goodness <em>and create impact.</em></span></div></div>
+<div class="pv-panel"><i></i><i></i><i class="on"></i><i></i><b></b></div>
+</div>
+<div class="card-body">
+<div class="card-head"><div class="num">3</div><div class="names"><strong><span class="ar">النبض</span><span class="en">Pulse</span></strong><small><span class="ar">Pulse · حملة داكنة</span><span class="en">النبض · Dark campaign</span></small></div></div>
+<p><span class="ar">صفحة حملة داكنة: لوحة التبرع داخل الواجهة الأولى وزر عنبري لا يُخطأ.</span><span class="en">A dark campaign page: the donation panel sits inside the hero with an unmissable amber button.</span></p>
+<div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+<a class="card" href="mosaic.html">
+<div class="pv pv-mosaic" aria-hidden="true">
+<div class="t-teal"><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، ونصنع الأثر.</span><span class="en">From Gaza… we extend goodness and create impact.</span></div></div>
+<div class="t-photo"><img src="images/carry-bed.jpg" alt=""></div>
+<div class="t-white"><i></i><i></i><i class="on"></i><i></i></div>
+<div class="t-sky"></div>
+<div class="t-photo2"><img src="images/hero.jpg" alt=""></div>
+</div>
+<div class="card-body">
+<div class="card-head"><div class="num">4</div><div class="names"><strong><span class="ar">الفسيفساء</span><span class="en">Mosaic</span></strong><small><span class="ar">Mosaic · شبكة عصرية</span><span class="en">الفسيفساء · Modern bento</span></small></div></div>
+<p><span class="ar">شبكة بلاطات عصرية بزوايا دائرية، بلون الشعار وحده دون لون ثانٍ.</span><span class="en">A modern grid of rounded tiles in the logo's teal alone, with no second colour.</span></p>
+<div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+</main>
+
+<p class="note"><span class="ar">ما بين [أقواس] في الصفحات عناصر مؤقتة تنتظر بياناتكم: أرقام الأثر، قصص النجاح، وبيانات التحويل البنكي.</span><span class="en">Anything in [brackets] on the pages is a placeholder waiting for your data: impact numbers, success stories and bank transfer details.</span></p>
+
+</div>
+</div>
+
+<script>
+(function () {
+  var root = document.getElementById('madad-root');
+  function setLang(l) {
+    root.setAttribute('data-lang', l);
+    root.setAttribute('lang', l);
+    root.setAttribute('dir', l === 'ar' ? 'rtl' : 'ltr');
+    document.documentElement.lang = l;
+    try { localStorage.setItem('madad-lang', l); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem('madad-lang'); } catch (e) {}
+  if (saved === 'en') setLang('en');
+  document.getElementById('lang-toggle').addEventListener('click', function () {
+    setLang(root.getAttribute('data-lang') === 'ar' ? 'en' : 'ar');
+  });
+})();
+</script>
+</body>
+</html>
