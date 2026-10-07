@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>تصاميم موقع مدد</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@800&family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alexandria:wght@800&family=Changa:wght@800&family=El+Messiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Readex+Pro:wght@700&family=Tajawal:wght@800&display=swap">
 <style>
 /* Layout: one start-aligned intro, then a 2×2 grid of concept cards; each card is a single link with a miniature of the page it opens. */
 :root {
@@ -77,14 +77,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 .pv-athar .pv-bar i.on { background: #055064; border-color: #055064; }
 .pv-athar .pv-bar b { margin-inline-start: auto; width: 22cqw; height: 5.4cqw; border-radius: 1.2cqw; background: #055064; }
 
-.pv-journal { background: #F3F5F4; color: #10262D; }
-.pv-journal .pv-mast { position: absolute; inset-inline: 6cqw; top: 3.4cqw; padding-bottom: 1.6cqw; border-bottom: .9cqw double #10262D; text-align: center; font-family: 'Amiri', serif; font-size: 4.2cqw; line-height: 1.2; font-weight: 700; color: #055064; }
-.pv-journal .pv-text { position: absolute; inset-inline-start: 6cqw; top: 17cqw; width: 47cqw; display: flex; flex-direction: column; gap: 1cqw; }
-.pv-journal .pv-kick { font-size: 2.1cqw; font-weight: 700; color: #B83A24; }
-.pv-journal .pv-h { font-family: 'Amiri', serif; font-size: 7.4cqw; line-height: 1.32; }
-.pv-journal .pv-photo { position: absolute; inset-inline-end: 6cqw; top: 15cqw; width: 34cqw; height: 44cqw; }
-.pv-journal .pv-photo img { object-position: 50% 28%; }
-
 .pv-pulse { background: #02222B; }
 .pv-pulse img { object-position: 50% 28%; }
 .pv-pulse .pv-shade { position: absolute; inset: 0; background: linear-gradient(to bottom, rgba(2,34,43,.84), rgba(2,34,43,.78) 55%, #02222B); }
@@ -107,6 +99,43 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 .pv-mosaic .t-white i.on { background: #055064; }
 .pv-mosaic .t-sky { background: #CBE4E9; }
 .pv-mosaic .t-photo2 img { object-position: 14% 30%; }
+
+.badge { align-self: flex-start; padding: 2px 12px; border-radius: 999px; background: var(--chip); color: var(--brand); font-size: 13px; font-weight: 700; }
+
+.pv-waha { background: #073B2E; }
+.pv-waha img { object-position: 50% 30%; }
+[dir="rtl"] .pv-waha .pv-shade { position: absolute; inset: 0; background: linear-gradient(to left, rgba(7,59,46,.96) 0%, rgba(7,59,46,.86) 40%, rgba(7,59,46,.2) 82%); }
+[dir="ltr"] .pv-waha .pv-shade { position: absolute; inset: 0; background: linear-gradient(to right, rgba(7,59,46,.96) 0%, rgba(7,59,46,.86) 40%, rgba(7,59,46,.2) 82%); }
+.pv-waha .pv-text { position: absolute; inset-inline-start: 6cqw; top: 8cqw; width: 52cqw; display: flex; flex-direction: column; align-items: flex-start; gap: 2.6cqw; color: #FFFFFF; }
+.pv-waha .pv-h { font-family: 'Tajawal', sans-serif; font-weight: 800; font-size: 6.4cqw; }
+.pv-waha .pv-h em, .pv-judhoor .pv-h em, .pv-nada .pv-h em { font-style: normal; display: block; }
+.pv-waha .pv-h em { color: #9BE0A8; }
+.pv-waha .pv-btn { padding: 1.2cqw 4cqw; border-radius: 1.4cqw; background: #E9B949; color: #2A1E00; font-size: 2.8cqw; font-weight: 700; }
+.pv-waha .pv-count { position: absolute; inset-inline-start: 6cqw; bottom: 15cqw; color: #FFFFFF; font-size: 2.6cqw; font-weight: 700; direction: ltr; }
+.pv-waha .pv-cards { position: absolute; inset-inline: 6cqw; bottom: -2cqw; display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.6cqw; }
+.pv-waha .pv-cards i { height: 12cqw; border-radius: 2cqw; background: #FFFFFF; box-shadow: 0 1cqw 3cqw rgba(0,0,0,.25); }
+
+.pv-nada { background: #F3F9F4; color: #14302A; }
+.pv-nada .pv-arch { position: absolute; inset-inline-end: 8cqw; top: 6cqw; width: 30cqw; height: 44cqw; border-radius: 15cqw 15cqw 3cqw 3cqw; overflow: hidden; box-shadow: 0 0 0 1.4cqw #FFFFFF, 0 0 0 1.6cqw #DCEADF; }
+.pv-nada .pv-arch img { object-position: 50% 28%; }
+.pv-nada .pv-text { position: absolute; inset-inline-start: 7cqw; top: 13cqw; width: 46cqw; display: flex; flex-direction: column; align-items: flex-start; gap: 2.6cqw; }
+.pv-nada .pv-h { font-family: 'El Messiri', serif; font-size: 6.4cqw; line-height: 1.35; }
+.pv-nada .pv-h em { color: #12715A; }
+.pv-nada .pv-btn { padding: 1.3cqw 4.4cqw; border-radius: 99cqw; background: #12715A; color: #FFFFFF; font-size: 2.8cqw; font-weight: 700; }
+.pv-nada .pv-dots { display: flex; gap: 1.2cqw; }
+.pv-nada .pv-dots i { width: 4cqw; height: 1.4cqw; border-radius: 99cqw; background: #AFCBBD; }
+.pv-nada .pv-dots i.on { width: 8cqw; background: #12715A; }
+
+.pv-judhoor { background: #06251D; color: #FFFFFF; }
+.pv-judhoor .pv-photo { position: absolute; inset-block: 0; inset-inline-end: 0; width: 42cqw; border-inline-start: 1.4cqw solid #C6F27A; }
+.pv-judhoor .pv-photo img { object-position: 50% 28%; }
+.pv-judhoor .pv-text { position: absolute; inset-inline-start: 6cqw; top: 8cqw; width: 46cqw; display: flex; flex-direction: column; align-items: flex-start; gap: 2.6cqw; }
+.pv-judhoor .pv-h { font-family: 'Changa', sans-serif; font-weight: 800; font-size: 7cqw; line-height: 1.2; }
+.pv-judhoor .pv-h em { color: #C6F27A; }
+.pv-judhoor .pv-btn { padding: 1.2cqw 4cqw; border-radius: .8cqw; background: #C6F27A; color: #0C1F19; font-size: 2.8cqw; font-weight: 700; }
+.pv-judhoor .pv-tabs { position: absolute; inset-inline-start: 6cqw; bottom: 6cqw; width: 46cqw; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.6cqw; }
+.pv-judhoor .pv-tabs i { height: .7cqw; background: rgba(255,255,255,.3); }
+.pv-judhoor .pv-tabs i.on { background: #C6F27A; }
 </style>
 <style>body{margin:0}img{max-width:100%}</style>
 </head>
@@ -121,8 +150,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 </header>
 
 <section class="intro">
-<h1><span class="ar">أربعة تصاميم لموقع مدد</span><span class="en">Four designs for the Madad website</span></h1>
-<p><span class="ar">اختر تصميمًا لفتح صفحته كاملة. كل صفحة تعمل بالعربية والإنجليزية وتتجاوب مع الجوال، ويمكنك التنقل بين التصاميم من الشريط أسفل كل صفحة.</span><span class="en">Pick a design to open its full page. Every page works in Arabic and English and adapts to phones, and the bar at the bottom of each page moves between the designs.</span></p>
+<h1><span class="ar">ستة تصاميم لموقع مدد</span><span class="en">Six designs for the Madad website</span></h1>
+<p><span class="ar">اختر تصميمًا لفتحه. التصاميم 4 و5 و6 مواقع كاملة بعدة صفحات: الرئيسية، المشاريع، تفاصيل المشروع، الأخبار، وتواصل معنا. كل الصفحات تعمل بالعربية والإنجليزية وتتجاوب مع الجوال.</span><span class="en">Pick a design to open it. Designs 4, 5 and 6 are full sites with several pages: home, projects, project details, news and contact. Every page works in Arabic and English and adapts to phones.</span></p>
 </section>
 
 <main class="grid">
@@ -141,19 +170,6 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 </div>
 </a>
 
-<a class="card" href="journal.html">
-<div class="pv pv-journal" aria-hidden="true">
-<div class="pv-mast">مدد | madad</div>
-<div class="pv-text"><div class="pv-kick"><span class="ar">من الميدان · قطاع غزة</span><span class="en">FROM THE FIELD · GAZA STRIP</span></div><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، ونصنع الأثر.</span><span class="en">From Gaza… we extend goodness and create impact.</span></div></div>
-<div class="pv-photo"><img src="images/tent-pole.jpg" alt=""></div>
-</div>
-<div class="card-body">
-<div class="card-head"><div class="num">2</div><div class="names"><strong><span class="ar">الميدان</span><span class="en">Field Journal</span></strong><small><span class="ar">Field Journal · تحريري قصصي</span><span class="en">الميدان · Editorial storytelling</span></small></div></div>
-<p><span class="ar">يروي العمل كقصة: عناوين بخط أميري، ثلاثة فصول مرقّمة، ومقال مصوّر من الميدان.</span><span class="en">Tells the work as a story: Amiri headlines, three numbered chapters and a captioned photo essay.</span></p>
-<div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
-</div>
-</a>
-
 <a class="card" href="pulse.html">
 <div class="pv pv-pulse" aria-hidden="true">
 <img src="images/hero.jpg" alt="">
@@ -162,7 +178,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 <div class="pv-panel"><i></i><i></i><i class="on"></i><i></i><b></b></div>
 </div>
 <div class="card-body">
-<div class="card-head"><div class="num">3</div><div class="names"><strong><span class="ar">النبض</span><span class="en">Pulse</span></strong><small><span class="ar">Pulse · حملة داكنة</span><span class="en">النبض · Dark campaign</span></small></div></div>
+<div class="card-head"><div class="num">2</div><div class="names"><strong><span class="ar">النبض</span><span class="en">Pulse</span></strong><small><span class="ar">Pulse · حملة داكنة</span><span class="en">النبض · Dark campaign</span></small></div></div>
 <p><span class="ar">صفحة حملة داكنة: لوحة التبرع داخل الواجهة الأولى وزر عنبري لا يُخطأ.</span><span class="en">A dark campaign page: the donation panel sits inside the hero with an unmissable amber button.</span></p>
 <div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
 </div>
@@ -177,9 +193,52 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--focus); outline
 <div class="t-photo2"><img src="images/hero.jpg" alt=""></div>
 </div>
 <div class="card-body">
-<div class="card-head"><div class="num">4</div><div class="names"><strong><span class="ar">الفسيفساء</span><span class="en">Mosaic</span></strong><small><span class="ar">Mosaic · شبكة عصرية</span><span class="en">الفسيفساء · Modern bento</span></small></div></div>
+<div class="card-head"><div class="num">3</div><div class="names"><strong><span class="ar">الفسيفساء</span><span class="en">Mosaic</span></strong><small><span class="ar">Mosaic · شبكة عصرية</span><span class="en">الفسيفساء · Modern bento</span></small></div></div>
 <p><span class="ar">شبكة بلاطات عصرية بزوايا دائرية، بلون الشعار وحده دون لون ثانٍ.</span><span class="en">A modern grid of rounded tiles in the logo's teal alone, with no second colour.</span></p>
 <div class="open"><span class="ar">افتح الصفحة</span><span class="en">Open the page</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+<a class="card" href="waha.html">
+<div class="pv pv-waha" aria-hidden="true">
+<img src="images/hero.jpg" alt="">
+<div class="pv-shade"></div>
+<div class="pv-text"><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، <em>ونصنع الأثر.</em></span><span class="en">From Gaza… we extend goodness <em>and create impact.</em></span></div><div class="pv-btn"><span class="ar">تبرع الان</span><span class="en">Donate Now</span></div></div>
+<div class="pv-count">01 / 04</div>
+<div class="pv-cards"><i></i><i></i><i></i><i></i><i></i></div>
+</div>
+<div class="card-body">
+<div class="badge"><span class="ar">جديد · عدة صفحات</span><span class="en">New · multi-page</span></div>
+<div class="card-head"><div class="num">4</div><div class="names"><strong><span class="ar">الواحة</span><span class="en">Waha</span></strong><small><span class="ar">Waha · الأقرب إلى عطايا</span><span class="en">الواحة · closest to Attaya</span></small></div></div>
+<p><span class="ar">أخضر غامق على أبيض، كاروسيل صور بعرض الصفحة، وبطاقات تتداخل مع الواجهة الأولى.</span><span class="en">Deep green on white, a full-width photo carousel and cards that overlap the hero.</span></p>
+<div class="open"><span class="ar">افتح الموقع</span><span class="en">Open the site</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+<a class="card" href="nada.html">
+<div class="pv pv-nada" aria-hidden="true">
+<div class="pv-arch"><img src="images/tent-pole.jpg" alt=""></div>
+<div class="pv-text"><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، <em>ونصنع الأثر.</em></span><span class="en">From Gaza… we extend goodness <em>and create impact.</em></span></div><div class="pv-btn"><span class="ar">تبرع الان</span><span class="en">Donate Now</span></div><div class="pv-dots"><i class="on"></i><i></i><i></i><i></i></div></div>
+</div>
+<div class="card-body">
+<div class="badge"><span class="ar">جديد · عدة صفحات</span><span class="en">New · multi-page</span></div>
+<div class="card-head"><div class="num">5</div><div class="names"><strong><span class="ar">الندى</span><span class="en">Nada</span></strong><small><span class="ar">Nada · فاتح وهادئ</span><span class="en">الندى · light and calm</span></small></div></div>
+<p><span class="ar">أخضر زمردي على خلفية فاتحة، كاروسيل بصورة مقوّسة، وأزرار وبطاقات دائرية.</span><span class="en">Emerald green on a light ground, a carousel with an arched photo, and rounded buttons and cards.</span></p>
+<div class="open"><span class="ar">افتح الموقع</span><span class="en">Open the site</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
+</div>
+</a>
+
+<a class="card" href="judhoor.html">
+<div class="pv pv-judhoor" aria-hidden="true">
+<div class="pv-photo"><img src="images/tent-pole.jpg" alt=""></div>
+<div class="pv-text"><div class="pv-h"><span class="ar">من غزة… نمدّ الخير، <em>ونصنع الأثر.</em></span><span class="en">From Gaza… we extend goodness <em>and create impact.</em></span></div><div class="pv-btn"><span class="ar">تبرع الان</span><span class="en">Donate Now</span></div></div>
+<div class="pv-tabs"><i class="on"></i><i></i><i></i><i></i></div>
+</div>
+<div class="card-body">
+<div class="badge"><span class="ar">جديد · عدة صفحات</span><span class="en">New · multi-page</span></div>
+<div class="card-head"><div class="num">6</div><div class="names"><strong><span class="ar">الجذور</span><span class="en">Judhoor</span></strong><small><span class="ar">Judhoor · جريء وداكن</span><span class="en">الجذور · bold and dark</span></small></div></div>
+<p><span class="ar">أخضر ليلي مع لون ليموني للتبرع، خط عريض، وكاروسيل بتبويبات مرقّمة.</span><span class="en">Night green with a lime donate colour, heavy type and a carousel with numbered tabs.</span></p>
+<div class="open"><span class="ar">افتح الموقع</span><span class="en">Open the site</span><svg class="flip" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"></path></svg></div>
 </div>
 </a>
 
